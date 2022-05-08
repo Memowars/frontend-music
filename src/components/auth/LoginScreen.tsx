@@ -17,7 +17,11 @@ export const LoginScreen = () => {
   };
   return (
     <div className="loging_Container ">
-      <h1>Inicio de sesión</h1>
+      <hr
+        style={{ color: 'white', width: '700px' }}
+        className="animate__animated  animate__backInLeft"
+      />
+      <h1 className="animate__animated animate__fadeIn">Inicio de sesión</h1>
       <div>
         <Button style={{ textTransform: 'none' }} color="inherit">
           <p style={{ marginRight: '3px' }}>¿Aún no tienes una cuenta? </p>
@@ -63,6 +67,11 @@ export const LoginScreen = () => {
           </div>
         </form>
       </div>
+
+      <hr
+        style={{ color: 'white', width: '700px' }}
+        className="animate__animated  animate__backInRight"
+      />
     </div>
   );
 };
