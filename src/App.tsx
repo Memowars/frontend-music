@@ -1,9 +1,10 @@
 import './App.css';
+import { LoginScreen } from './components/auth/LoginScreen';
 
 function App() {
   return (
-    <div className="App">
-      <p>Hello my best friend</p>
+    <div>
+      <LoginScreen />
     </div>
   );
 }

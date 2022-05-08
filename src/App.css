@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+
+.loging_Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #121216;
+  height: max-content;
+  color: white;
+  flex-direction: column;
+  text-transform: none;
+  height: 100vh;
+}
+
+.Login_button{
+  margin-top: 12px;
+}
+
+.Login_input_container{
+  text-align: left;
+}
+
+.Login_input{  
+  width: 440px;
+  height: 50px;
+}
