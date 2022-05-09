@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { LoginScreen } from './components/auth/LoginScreen';
+import LoginScreen from './components/auth/LoginScreen';
 
 function App() {
   return (
