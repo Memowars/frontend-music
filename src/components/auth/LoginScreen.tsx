@@ -6,6 +6,7 @@ const LoginScreen = () => {
   const [Auth, setAuth] = useState(true);
   return (
     <div className="loging_Container ">
+      <h1>Music 8G</h1>
       <hr
         style={{ color: 'white', width: '700px' }}
         className="animate__animated  animate__backInLeft"

@@ -15,7 +15,9 @@ const SignIn = () => {
       userName: Yup.string()
         .max(15, 'Nombre demasiado largo')
         .required('Nombre requerido'),
-      email: Yup.string().email('Correo invalido').required('Correo requerido'),
+      email: Yup.string()
+        .email('Correo invalido')
+        .required('Correo requerido'),
       password: Yup.string().required('Contraseña requerida'),
     }),
     onSubmit: (values) => {
@@ -25,7 +27,7 @@ const SignIn = () => {
   return (
     <>
       <div className="animate__animated animate__fadeIn animate__delay-1s">
-        <h1>Registrate</h1>
+        <h2>Registrate</h2>
         <div>
           <Button style={{ textTransform: 'none' }} color="inherit">
             <p style={{ marginRight: '3px' }}>¿Ya tienes una cuenta? </p>

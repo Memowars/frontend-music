@@ -11,7 +11,9 @@ const LogIn = () => {
       password: '',
     },
     validationSchema: Yup.object({
-      email: Yup.string().email('Correo invalido').required('Correo requerido'),
+      email: Yup.string()
+        .email('Correo invalido')
+        .required('Correo requerido'),
       password: Yup.string().required('Contraseña requerida'),
     }),
     onSubmit: (values) => {
@@ -20,7 +22,7 @@ const LogIn = () => {
   });
   return (
     <div className="animate__animated animate__fadeIn animate__delay-1s">
-      <h1>Inicio de sesión</h1>
+      <h2>Inicio de sesión</h2>
       <div>
         <Button style={{ textTransform: 'none' }} color="inherit">
           <p style={{ marginRight: '3px' }}>¿Aún no tienes una cuenta? </p>
