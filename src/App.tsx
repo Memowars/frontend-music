@@ -1,12 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
-import LoginScreen from './components/auth/LoginScreen';
+import AppRouter from './routers/AppRouter';
+import { store } from './store/store';
 
 function App() {
   return (
-    <div>
-      <LoginScreen />
-    </div>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
   );
 }
 

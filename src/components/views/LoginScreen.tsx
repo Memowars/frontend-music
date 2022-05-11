@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import LogIn from './LogIn';
-import SignIn from './SignIn';
+import { useSelector } from 'react-redux';
+import LogIn from '../auth/LogIn';
+import SignIn from '../auth/SignIn';
 
 const LoginScreen = () => {
-  const [Auth, setAuth] = useState(true);
+  useSelector;
+  const [Auth, setAuth] = useState(false);
   return (
     <div className="loging_Container ">
       <h1>Music 8G</h1>
