@@ -12,7 +12,7 @@ const CardAlbum = () => {
   };
   return (
     <>
-      <div className="relative h-72 w-auto bg-gray-700 bg-opacity-30 rounded-md hover:bg-gray-600">
+      <div className="relative h-80 w-auto bg-gray-700 bg-opacity-30 rounded-md hover:bg-gray-800">
         <div onClick={cambio} className="cursor-pointer">
           <MdOutlineArrowDropDownCircle
             color="white"
@@ -21,15 +21,18 @@ const CardAlbum = () => {
         </div>
         {toggle ? (
           <div className="p-2 animate__animated animate__fadeIn">
-            <div className="relative w-52">
+            <div className="relative w-52 ">
               <img src={albumImg} alt="album-img" className="w-52 rounded-md" />
-              {/*    <span className="relative top-2 right-2 visible hover:invisible z-50">
-                <AiFillPlayCircle />
-              </span> */}
+              <span
+                className="absolute top-2 right-2 z-50 cursor-pointer "
+                onClick={cambio}
+              >
+                <AiFillPlayCircle className="text-6xl bg-gray-400 hover:bg-black rounded-full" />
+              </span>
             </div>
             <div className="pt-2">
               <h1>The Wall</h1>
-              <h4>1979 - Album</h4>
+              <h4>1979 - Rock Psicodelico</h4>
             </div>
             <span className="absolute bottom-1 right-1">
               <div className="flex justify-center items-center gap-2 cursor-pointer">

@@ -1,20 +1,21 @@
 import React from 'react';
+import { BsMusicNoteList } from 'react-icons/bs';
+import { IoMdHome, IoMdSearch } from 'react-icons/io';
+import { MdPlaylistAdd } from 'react-icons/md';
 import {
   BrowserRouter,
-  Routes,
-  Route,
-  NavLink,
   Navigate,
+  NavLink,
+  Route,
+  Routes,
 } from 'react-router-dom';
+import logo from '../assets/logo2.png';
 import Albums from '../components/views/Albums';
 import { Artistas } from '../components/views/Artistas';
-import { IoMdAlbums, IoMdHome, IoMdPerson, IoMdSearch } from 'react-icons/io';
-import { MdPlaylistAdd } from 'react-icons/md';
-
-import logo from '../assets/logo2.png';
+import Buscar from '../components/views/Buscar';
 import Home from '../components/views/Home';
 import { Playlist } from '../components/views/Playlist';
-import Buscar from '../components/views/Buscar';
+
 const AppRouter = () => {
   return (
     <>
@@ -51,7 +52,7 @@ const AppRouter = () => {
                   to="/artistas"
                   className={({ isActive }) => (isActive ? 'underline ' : '')}
                 >
-                  <IoMdPerson color="white" />
+                  <BsMusicNoteList color="white" />
                   Fonoteca
                 </NavLink>
               </li>

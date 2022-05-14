@@ -7,12 +7,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import ComprarBtn from '../UI/ComprarBtn';
 
 interface Column {
-  id: 'title' | 'duration';
+  id: 'title' | 'duration' | 'comprar';
   label: string;
   minWidth?: number;
-  align?: 'right';
+  align?: 'left';
   format?: (value: number) => string;
 }
 
@@ -23,8 +24,13 @@ const columns: Column[] = [
     id: 'duration',
     label: 'Duración',
     minWidth: 170,
-    align: 'right',
+    align: 'left',
     format: (value: number) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'comprar',
+    label: 'Comprar',
+    minWidth: 170,
   },
 ];
 
@@ -32,21 +38,23 @@ interface Data {
   title: string;
 
   duration: string;
+
+  comprar: any;
 }
 
-function createData(title: string, duration: string): Data {
-  return { title, duration };
+function createData(title: string, duration: string, comprar: any): Data {
+  return { title, duration, comprar };
 }
 
 const rows = [
-  createData('In the Flesh?', '3:18'),
-  createData('The Thin ice', '2.26'),
-  createData('Another Brick in the Wall, Pt.1', '3.12'),
-  createData('The Happiest Days of Our Lives', '1.30'),
-  createData('In the Flesh?', '3:18'),
-  createData('The Thin ice', '2.26'),
-  createData('Another Brick in the Wall, Pt.1', '3.12'),
-  createData('The Happiest Days of Our Lives', '1.30'),
+  createData('In the Flesh?', '3:18', <ComprarBtn />),
+  createData('The Thin ice', '2.26', <ComprarBtn />),
+  createData('Another Brick in the Wall, Pt.1', '3.12', <ComprarBtn />),
+  createData('The Happiest Days of Our Lives', '1.30', <ComprarBtn />),
+  createData('In the Flesh?', '3:18', <ComprarBtn />),
+  createData('The Thin ice', '2.26', <ComprarBtn />),
+  createData('Another Brick in the Wall, Pt.1', '3.12', <ComprarBtn />),
+  createData('The Happiest Days of Our Lives', '1.30', <ComprarBtn />),
 ];
 
 export default function Albums() {
