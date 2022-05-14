@@ -6,24 +6,26 @@ import {
   NavLink,
   Navigate,
 } from 'react-router-dom';
-import { Albums } from '../components/views/Albums';
+import Albums from '../components/views/Albums';
 import { Artistas } from '../components/views/Artistas';
-import { IoMdAlbums, IoMdHome, IoMdPerson } from 'react-icons/io';
+import { IoMdAlbums, IoMdHome, IoMdPerson, IoMdSearch } from 'react-icons/io';
 import { MdPlaylistAdd } from 'react-icons/md';
 
 import logo from '../assets/logo2.png';
 import Home from '../components/views/Home';
+import { Playlist } from '../components/views/Playlist';
+import Buscar from '../components/views/Buscar';
 const AppRouter = () => {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <div className="main-layout relative">
           <nav>
-            <a href="/">
+            <a href="/" className="flex justify-center pb-3">
               <img src={logo} alt="imagen" className="logo"></img>
             </a>
-            <hr className="" />
-            <ul className="nav-ul">
+            <hr />
+            <ul className="nav-ul pt-3">
               <li>
                 <NavLink
                   to="/home"
@@ -35,22 +37,25 @@ const AppRouter = () => {
               </li>
               <li>
                 <NavLink
-                  to="/artistas"
-                  className={({ isActive }) => (isActive ? 'underline ' : '')}
+                  to="/buscar"
+                  className={({ isActive }) =>
+                    isActive ? 'underline rounded-md' : ''
+                  }
                 >
-                  <IoMdPerson color="white" />
-                  Artistas
+                  <IoMdSearch color="white" />
+                  Buscar
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/albums"
+                  to="/artistas"
                   className={({ isActive }) => (isActive ? 'underline ' : '')}
                 >
-                  <IoMdAlbums color="white" />
-                  Albums
+                  <IoMdPerson color="white" />
+                  Fonoteca
                 </NavLink>
               </li>
+
               <li>
                 <NavLink
                   to="/playlist"
@@ -63,18 +68,21 @@ const AppRouter = () => {
                 </NavLink>
               </li>
             </ul>
-            <hr style={{ color: 'white', width: '80px' }} />
+            <div className="flex justify-center">
+              <hr className="w-20 text-white" />
+            </div>
           </nav>
           <Routes>
             <Route path="home" element={<Home />} />
+            <Route path="buscar" element={<Buscar />} />
             <Route path="artistas" element={<Artistas />} />
             <Route path="albums" element={<Albums />} />
-            <Route path="playlist" element={<Albums />} />
-            <Route path="/*" element={<Navigate to="/artistas" replace />} />
+            <Route path="playlist" element={<Playlist />} />
+            <Route path="/*" element={<Navigate to="/home" replace />} />
           </Routes>
         </div>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 
