@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,6 +22,10 @@ code {
   width: 100%;
   background-color: #1c1a1afc;
   color: white;
+  
+}
+.component-layout{
+  padding: 15px;
 }
 nav {
   background-color: #000000;
@@ -29,14 +36,14 @@ nav {
   max-width: 250px;
   min-width: 250px;
   overflow: auto;
-  margin-right: 5px;
+  padding: 15px;
 }
 nav ul {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   padding-left: 0;
-  margin-left: 15px;
+
 }
 
 nav li {
@@ -56,4 +63,17 @@ nav li a {
 
 .underline{
   text-decoration: underline;
+}
+
+.irina{
+  background-image: url("./assets/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 38%;
+}
+.hellga{
+  background-image: url("./assets/pink-band.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 20%;
 }

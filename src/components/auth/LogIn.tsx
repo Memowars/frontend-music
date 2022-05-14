@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
-import React from 'react';
 import Link from '@mui/material/Link';
 import { useFormik } from 'formik';
+import React from 'react';
 import * as Yup from 'yup';
 import { IForm } from '../../Interfaces/IForm';
 const LogIn = () => {
@@ -21,14 +21,8 @@ const LogIn = () => {
     },
   });
   return (
-    <div className="animate__animated animate__fadeIn animate__delay-1s">
+    <div className="animate__animated animate__fadeIn  text-white py-8">
       <h2>Inicio de sesión</h2>
-      <div>
-        <Button style={{ textTransform: 'none' }} color="inherit">
-          <p style={{ marginRight: '3px' }}>¿Aún no tienes una cuenta? </p>
-          <Link href="/">Registrate</Link>
-        </Button>
-      </div>
       <div className="login-form">
         <form action="post" onSubmit={formik.handleSubmit}>
           <div className="Login_input_container">
@@ -59,7 +53,7 @@ const LogIn = () => {
               value={formik.values.password}
             />
           </div>
-          <div className="Login_button">
+          <div className="Login_button my-4">
             <Button
               color="primary"
               type="submit"

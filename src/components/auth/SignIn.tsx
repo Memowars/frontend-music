@@ -3,6 +3,7 @@ import { Button, Link } from '@mui/material';
 import { useFormik } from 'formik';
 import { IForm } from '../../Interfaces/IForm';
 import * as Yup from 'yup';
+import { fetchSinToken } from '../../helpers/fetch';
 
 const SignIn = () => {
   const formik = useFormik<IForm>({
@@ -21,20 +22,21 @@ const SignIn = () => {
       password: Yup.string().required('Contraseña requerida'),
     }),
     onSubmit: (values) => {
-      console.log(values);
+      const registrarUsuario = async () => {
+        const resp = await fetchSinToken('users/createUser', values, 'POST');
+        const res = await resp.json();
+        console.log('DATA POSTEADA', res);
+      };
+
+      registrarUsuario();
     },
   });
+
   return (
     <>
-      <div className="animate__animated animate__fadeIn animate__delay-1s">
+      <div className="animate__animated animate__fadeIn text-white py-8">
         <h2>Registrate</h2>
-        <div>
-          <Button style={{ textTransform: 'none' }} color="inherit">
-            <p style={{ marginRight: '3px' }}>¿Ya tienes una cuenta? </p>
-            <Link href="/">Iniciar sesión</Link>
-          </Button>
-        </div>
-        <div className="login-form">
+        <div className="login-form text-black">
           <form action="post" onSubmit={formik.handleSubmit}>
             <div className="Login_input_container">
               {formik.touched.email && formik.errors.email ? (
@@ -78,7 +80,7 @@ const SignIn = () => {
                 value={formik.values.password}
               />
             </div>
-            <div className="Login_button">
+            <div className="Login_button my-4">
               <Button
                 color="primary"
                 type="submit"
