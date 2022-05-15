@@ -3,7 +3,7 @@ import LogIn from '../auth/LogIn';
 import SignIn from '../auth/SignIn';
 
 const LoginScreen = () => {
-  const [Auth, setAuth] = useState(true);
+  const [Auth, setAuth] = useState(false);
   return (
     <div className="loging_Container ">
       <h1 className="text-6xl mb-6">Music 8G</h1>
@@ -23,6 +23,7 @@ const LoginScreen = () => {
         </div>
         {Auth ? <SignIn /> : <LogIn />}
       </div>
+
       <hr
         style={{ color: 'white', width: '700px' }}
         className="animate__animated  animate__backInRight"

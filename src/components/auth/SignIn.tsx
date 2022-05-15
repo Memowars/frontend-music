@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Link } from '@mui/material';
+import { Button } from '@mui/material';
 import { useFormik } from 'formik';
 import { IForm } from '../../Interfaces/IForm';
 import * as Yup from 'yup';
@@ -27,7 +27,6 @@ const SignIn = () => {
         const res = await resp.json();
         console.log('DATA POSTEADA', res);
       };
-
       registrarUsuario();
     },
   });
